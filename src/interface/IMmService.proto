@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package mm;
+
+option cc_generic_services = true;
+option py_generic_services = true;
+
+message GeoT
+{
+    float height = 1;
+    float length = 2;
+}
+
+enum MmType
+{
+  MmType_FOOL = 0;
+  MmType_NORMAL = 1;
+}
+
+message MmT
+{
+    GeoT geometry = 1;
+    MmType type = 2;
+}
+
+message MmFilterInputT
+{
+    repeated MmT mms = 1;
+    MmType type = 2;
+}
+
+message GeoCollectionT
+{
+    repeated GeoT ret_geos = 1;
+}
+
+service Mm
+{
+    rpc GetMmGeos(MmFilterInputT) returns(GeoCollectionT);
+}
