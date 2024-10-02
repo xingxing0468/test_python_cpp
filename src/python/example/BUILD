@@ -19,3 +19,16 @@ copy_file(
     out = "service_plugins/ZMmServiceFactoryRunTimePlugin.so",
     allow_symlink = True,
 )
+
+py_test(
+    name = "test_mm_service",
+    srcs = ["test_mm_service.py"],
+    data = [
+        ":mm_service_plugin",
+    ],
+    deps = [
+        "//src/interface:py_interfaces",
+        "@zed_python_cpp//src/python/service_client",
+        "@zed_python_cpp//src/python/service_probe",
+    ],
+)
