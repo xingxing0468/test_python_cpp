@@ -7,6 +7,7 @@ py_binary(
         ":mm_service_plugin",
     ],
     deps = [
+        "//src/interface:py_interfaces",
         "@zed_python_cpp//src/python/service_client",
         "@zed_python_cpp//src/python/service_probe",
     ],
