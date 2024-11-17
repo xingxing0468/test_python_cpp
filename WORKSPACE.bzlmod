@@ -24,7 +24,7 @@ new_git_repository(
     name = "z_python_cpp",
     remote = "https://github.com/xingxing0468/wheels.git",
     strip_prefix = "PythonAndCpp",
-    tag = "v3_0_0_0",
+    tag = "v3_0_0_1",
 )
 
 # http_archive(
