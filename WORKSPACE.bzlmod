@@ -1,4 +1,4 @@
-workspace(name = "z_python_cpp")
+workspace(name = "test_python_cpp")
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
@@ -21,20 +21,20 @@ load("@build_stack_rules_proto//deps:protobuf_core_deps.bzl", "protobuf_core_dep
 protobuf_core_deps()
 
 new_git_repository(
-    name = "zed_python_cpp",
+    name = "z_python_cpp",
     remote = "https://github.com/xingxing0468/wheels.git",
     strip_prefix = "PythonAndCpp",
-    tag = "v2_0_0_1",
+    tag = "v3_0_0_0",
 )
 
 # http_archive(
-#     name = "zed_python_cpp",
+#     name = "z_python_cpp",
 #     strip_prefix = "wheels-2_0_0_1/PythonAndCpp",
 #     urls = ["https://github.com/xingxing0468/wheels/archive/refs/tags/v2_0_0_1.tar.gz"],
 # )
 
 # new_local_repository(
-#     name = "zed_python_cpp",
-#     build_file = "//external/zed_python_cpp.BUILD",
+#     name = "z_python_cpp",
+#     build_file = "//external:z_python_cpp.BUILD",
 #     path = "/home/zett/zed/Dev/wheels/PythonAndCpp",
 # )
